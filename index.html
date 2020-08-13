@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docready()">
+  <img src="2.png" id="nobita" style="position:absolute;left:0; top:0;" height="100" width="80">
+  <script>
+      function phimlen () {
+          let elemen=document.getElementById("nobita");
+          elemen.style.top=parseInt(elemen.style.top) -50 +"px";
+
+      }
+      function phimxuong(){
+          let elemen=document.getElementById("nobita");
+          elemen.style.top=parseInt(elemen.style.top) +50 +"px";
+      }
+      function phimtrai(){
+          let elemen=document.getElementById("nobita");
+          elemen.style.left=parseInt(elemen.style.left) -50 +"px";
+
+      }
+      function phimphai(){
+          let elemen=document.getElementById("nobita");
+          elemen.style.left=parseInt(elemen.style.left) +50+"px";
+
+      }
+      function moveselection(evt){
+          switch (evt.keyCode) {
+              case 37:
+                  phimtrai();
+                  break;
+              case 39:
+                  phimphai();
+                  break;
+              case 38:
+                  phimlen();
+                  break;
+              case 40:
+                  phimxuong();
+                  break;
+          }
+
+      }
+      function docready() {
+          window.addEventListener('keydown', moveselection);
+      }
+
+  </script>
+
+
+
+</body>
+</html>
